@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 # this will change the home IP
 
+# checking if running on root
 sudo cp /etc/hosts /etc/hosts.bak
 
+# removing any previous entries
 sed -i '/127.0.0.1\s*localhost/d' /etc/hosts
 sed -1 '/facebook.com/d' /etc/hosts
 
-echo "127.0.0.2 localhost" >> /etc/hosts
-echo "8.8.8.8 facebook.com" >> /etc/hosts
+# adds new entries
+echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts > /dev/null
+echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts > /dev/null

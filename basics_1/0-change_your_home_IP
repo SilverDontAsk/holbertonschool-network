@@ -1,0 +1,10 @@
+#!/bin/env bash
+# this will change the home IP
+
+sudo cp /etc/hosts /etc/hosts.bak
+
+sed -i '/127.0.0.2/d' /etc/hosts
+sed -1 '/8.8.8.8/d' /etc/hosts
+
+echo "127.0.0.2 localhost" >> /etc/hosts
+echo "8.8.8.8 facebook.com" >> /etc/hosts

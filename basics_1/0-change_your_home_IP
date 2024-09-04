@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # this will change the home IP
 
 sudo cp /etc/hosts /etc/hosts.bak
